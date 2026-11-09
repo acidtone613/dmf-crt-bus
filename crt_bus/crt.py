@@ -1,4 +1,4 @@
-"""crt.py -- number-theoretic core of the DMF CRT bus.
+"""crt.py -- number-theoretic core of the CRT bus.
 
 Everything else in this package is built from three facts:
 
@@ -7,7 +7,7 @@ Everything else in this package is built from three facts:
    with no carries between factors.
 2. Generalized CRT (NON-coprime moduli): the system  t = a1 (mod n1), t = a2 (mod n2)
    is solvable  iff  a1 = a2 (mod gcd(n1, n2)).  Then the solution is unique mod lcm(n1, n2).
-   This is the right tool when clocks share a prime (the DMF clocks all share 23).
+   This is the right tool when clocks share a prime (the bundled clocks all share 23).
 3. For several congruences, pairwise consistency is necessary AND sufficient.
 
 All functions are pure integer arithmetic (exact, no floating point).

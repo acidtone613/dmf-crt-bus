@@ -4,7 +4,7 @@ from itertools import product as iproduct
 from crt_bus.moduli_search import (_smallest_prime, brute_force_choose, candidate_options, choose_moduli,
                                    verify_choice)
 
-DMF_PERIODS = (22, 33, 24, 46, 759, 1081)
+TARGET_PERIODS = (22, 33, 24, 46, 759, 1081)
 
 
 def _bf_key(R, bound, den, objective):
@@ -48,10 +48,10 @@ def test_brute_force_reference_agrees_for_channels_objective():
         assert a == brute_force_choose(R, 20, objective="channels")[0]
 
 
-def test_dmf_clock_requirement_reproduces_the_hand_built_bus():
-    r = choose_moduli(285384, bound=64, must_cover=DMF_PERIODS, redundancy=2)
+def test_clock_requirement_reproduces_the_hand_built_bus():
+    r = choose_moduli(285384, bound=64, must_cover=TARGET_PERIODS, redundancy=2)
     assert r["moduli"] == (3, 8, 11, 23, 47) and r["redundant"] == (53, 59) and r["product"] == 285384
-    assert verify_choice(r["moduli"], 285384, must_cover=DMF_PERIODS, redundant=r["redundant"]) == []
+    assert verify_choice(r["moduli"], 285384, must_cover=TARGET_PERIODS, redundant=r["redundant"]) == []
 
 
 def test_denominators_are_made_whole_by_avoiding_their_primes():

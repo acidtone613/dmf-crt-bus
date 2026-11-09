@@ -1,7 +1,7 @@
 {
   "name": "dmf_crt_bus",
   "version": "1.0.0",
-  "purpose": "Exact CRT bus for the whole DMF system: clock lane (RNS), GF(2)/GF(3) field lanes (Z6), unified Golay x XQR23 code, module selection.",
+  "purpose": "Exact CRT bus for a system of periodic processes: clock lane (RNS), GF(2)/GF(3) field lanes (Z6), unified Golay x XQR23 code, module selection.",
   "entry_points": {
     "clock": "crt_bus.clock_bus.ClockBus",
     "whole_system": "crt_bus.system.SystemBus",
@@ -19,7 +19,7 @@
     "Golay[24,12,8] and XQR23[24,12,9] both preserved by P23, P11, S (S signed on GF(3))",
     "signed symmetry group order 12144 = 2*6072; lane orders include (22,11),(24,12),(46,23)",
     "joint decode: 3 GF(2)-lane + 4 GF(3)-lane errors at independent positions",
-    "choose_moduli reproduces (3,8,11,23,47)+(53,59) from the six DMF periods; matches brute force"
+    "choose_moduli reproduces (3,8,11,23,47)+(53,59) from the six target periods; matches brute force"
   ],
   "assumptions": [
     "ternary Floquet generators are an assumed realization (period 33, base order 11)"
@@ -28,7 +28,7 @@
     "no cryptanalytic claim",
     "no physics-layer claims"
   ],
-  "tests": "python3 run_checks.py (50 tests; 2 need the DMF repo via DMF_TRUTH_PATH)",
+  "tests": "python3 run_checks.py (50 tests; 2 optional cross-checks need an external reference tree via DMF_TRUTH_PATH)",
   "requires": [
     "numpy"
   ],

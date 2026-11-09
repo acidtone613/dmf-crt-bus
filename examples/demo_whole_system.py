@@ -44,6 +44,6 @@ print("   symmetry orders (GF(3)-lane, GF(2)-lane):", sorted(orders))
 
 print("\n4. MODULE SELECTION")
 r = choose_moduli(285384, bound=64, must_cover=(22, 33, 24, 46, 759, 1081), redundancy=2)
-print("   DMF clocks ->", r["moduli"], "+ redundant", r["redundant"], "| violations:",
+print("   target clocks ->", r["moduli"], "+ redundant", r["redundant"], "| violations:",
       verify_choice(r["moduli"], 285384, must_cover=(22, 33, 24, 46, 759, 1081), redundant=r["redundant"]))
 print("   10^12 range with NTT size 256 ->", choose_moduli(10 ** 12, bound=20000, root_orders=(256,))["moduli"])

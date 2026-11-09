@@ -1,4 +1,4 @@
-"""crt_bus -- a Chinese-Remainder-Theorem bus for the whole DMF system.
+"""crt_bus -- a Chinese-Remainder-Theorem bus for a whole system of periodic processes.
 
 Lanes
   clock lane   : tick counter as residues (8, 3, 11, 23, 47) + redundant (53, 59)

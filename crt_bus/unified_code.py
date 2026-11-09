@@ -1,9 +1,9 @@
-"""unified_code.py -- the GF(2) and GF(3) codes of DMF as ONE Z_6-linear code.
+"""unified_code.py -- the GF(2) and GF(3) codes here as ONE Z_6-linear code.
 
 Both crystals' length-24 codes are extended quadratic-residue codes at the SAME prime 23:
 
     binary Golay    [24,12,8]_2   (2 is a QR mod 23)
-    ternary QR      [24,12,9]_3   (3 is a QR mod 23)   -- 'XQR23' in the DMF repo
+    ternary QR      [24,12,9]_3   (3 is a QR mod 23)   -- 'XQR23' in this package
 
 Coordinates are the projective line P^1(F_23) = {0..22, inf}; inf is index 23.
 By CRT (Z_6 = GF(2) x GF(3)), the pair is one Z_6-linear code  C6 = CRT(Golay, XQR23)
@@ -71,14 +71,14 @@ def _inv_mod(A, p):
 
 # ------------------------------------------------------------------ the two codes
 def build_golay24():
-    """12x24 generator matrix of the extended binary Golay code (same as dmf.golay.G24)."""
+    """12x24 generator matrix of the extended binary Golay code."""
     seed = GASC + [0] * 11
     G23 = np.array([[seed[(j - i) % 23] for j in range(23)] for i in range(12)], dtype=np.int64)
     return np.hstack([G23, (G23.sum(axis=1) % 2).reshape(-1, 1)])
 
 
 def build_xqr23():
-    """12x24 generator matrix of the extended ternary QR code [24,12,9]_3 (same as dmf.ternary.xqr23_code)."""
+    """12x24 generator matrix of the extended ternary QR code [24,12,9]_3."""
     qr = sorted({(x * x) % 23 for x in range(1, 23)})
     q = [0] * 23
     for s in qr:

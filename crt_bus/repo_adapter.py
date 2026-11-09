@@ -1,8 +1,10 @@
-"""repo_adapter.py -- cross-check this package against the real DMF `truth/dmf` modules.
+"""repo_adapter.py -- optional cross-check against an external reference tree.
 
-If the DMF repo is importable (set DMF_TRUTH_PATH to the `truth` folder, or place it next to this
-package), `compare_with_repo()` verifies that this package's operators and codes are IDENTICAL to the
-repo's.  If it is not found, everything else in the package still works (it bundles its own copies).
+If a reference tree providing the `dmf` package (the "truth/dmf" modules) is
+available (set DMF_TRUTH_PATH to that folder, or place it next to this
+package), `compare_with_repo()` verifies that this package's operators and
+codes are IDENTICAL to the reference's. If it is not found, everything else
+in the package still works (it bundles its own copies).
 """
 import importlib
 import os

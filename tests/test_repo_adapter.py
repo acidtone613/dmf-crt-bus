@@ -7,20 +7,20 @@ from crt_bus.system import SystemBus
 from math import gcd, log2
 
 
-def test_package_matches_the_real_dmf_repo():
+def test_package_matches_the_reference_tree():
     dmf = load_repo()
     if dmf is None:
-        skip("DMF repo not found (set DMF_TRUTH_PATH to the 'truth' folder)")
+        skip("reference tree not found (set DMF_TRUTH_PATH to the folder providing the 'dmf' package)")
     res = compare_with_repo(dmf)
     assert all(res.values()), res
 
 
-def test_mi_law_on_the_repos_real_binary_floquet_tick():
+def test_mi_law_on_the_recorded_binary_floquet_tick():
     dmf = load_repo()
     if dmf is None:
-        skip("DMF repo not found (set DMF_TRUTH_PATH to the 'truth' folder)")
+        skip("reference tree not found (set DMF_TRUTH_PATH to the folder providing the 'dmf' package)")
     S = SystemBus()
-    # real binary clock: iterate the repo's own tick on a label vector for one full joint period
+    # recorded binary clock: iterate the reference tick on a label vector for one full joint period
     v, states = np.arange(24), []
     for _ in range(66):
         states.append(v.tobytes())

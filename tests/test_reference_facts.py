@@ -1,4 +1,4 @@
-"""Audit of specific DMF corpus claims (see FINDINGS.md).  Each test states what the corpus says and what is true."""
+"""Audit of specific circulated claims for these codes and clocks (see FINDINGS.md).  Each test states the claim that circulates and what is true."""
 from itertools import combinations
 from math import lcm
 

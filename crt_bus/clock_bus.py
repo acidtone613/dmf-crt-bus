@@ -1,7 +1,7 @@
 """clock_bus.py -- the tick counter as a CRT residue bus.
 
 Channels (8, 3, 11, 23, 47) are pairwise coprime; their product 285,384 = 2^3*3*11*23*47
-equals the joint period of ALL six DMF clocks:
+equals the joint period of ALL six clocks:
 
     orbit clocks   : binary 22 = 2*11     ternary 33 = 3*11     quadalic 24 = 8*3
     master clocks  : binary 46 = 2*23     ternary 759 = 3*11*23 quadalic 1081 = 23*47

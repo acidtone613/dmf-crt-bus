@@ -1,7 +1,7 @@
 """system.py -- the WHOLE system on one bus: clock lane + GF(2)/GF(3) state lanes.
 
 Crystals (state vectors over their own field):
-    bin  : GF(2)^24   binary Golay crystal, Floquet tick of order 22   (repo: truth/dmf/floquet.py)
+    bin  : GF(2)^24   binary Golay crystal, Floquet tick of order 22   (reference: floquet.py)
     ter  : GF(3)^12   ternary crystal, schedule period 33              (ASSUMED realization, see below)
     quad : GF(2)^48   quadalic crystal, M = C2 o P47 o P23Q of order 24 (x -> -1/(2x+1) on P^1(F_47))
 
@@ -18,7 +18,7 @@ to any tick costs the same regardless of t.  Storage = 22 + 33 + 24 = 79 permuta
 
 ASSUMED: the exact ternary generators (P_mult, P_23^T, H_T schedule) are not in the extracted
 corpus.  The realization used here (12-cycle; x -> 2x on 11 points; block 3-cycles; H_T every 11th
-tick) reproduces the corpus numbers (base operator order 11, schedule period 33).  Replace
+tick) reproduces the recorded reference numbers (base operator order 11, schedule period 33).  Replace
 `ternary_step_perm` with the real generators when found; nothing else changes.
 """
 from dataclasses import dataclass
