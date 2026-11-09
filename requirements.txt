@@ -1,0 +1,4 @@
+numpy>=1.24
+# optional:
+sympy>=1.12     # only for the group-order test (test_signed_group_has_order_12144_and_binary_quotient_6072)
+pytest>=7       # optional; run_checks.py works without it

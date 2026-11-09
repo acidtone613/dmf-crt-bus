@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmf-crt-bus"
+version = "1.0.0"
+description = "Exact CRT (Chinese Remainder Theorem) bus: RNS clock lane, GF(2)/GF(3) field lanes in Z6, unified binary-Golay x ternary-XQR23 code, and exact moduli search"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "sympy>=1.12"]
+sympy = ["sympy>=1.12"]
+
+[tool.setuptools]
+packages = ["crt_bus"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
